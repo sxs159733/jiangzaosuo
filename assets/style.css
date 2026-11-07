@@ -5,6 +5,10 @@
    ========================================================= */
 
 :root {
+  /* 全站字号基准：比浏览器默认 16px 略大，桌面约 18px、窄屏约 17px，
+     所有 rem 字号随之上浮，保持原有的层级比例 */
+  font-size: clamp(17px, 0.4vw + 16px, 18px);
+
   --site-bg: #f7f2e8;
   --site-fg: #2a241c;
   --site-accent: #6e7f45;
@@ -12,13 +16,15 @@
   --site-surface: #fffcf5;
   --site-muted: #7c6e5e;
   --site-border: #e3d7c4;
-  --site-font: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+  /* 西文交给系统 UI 字体，中文按平台挑选更清晰的无衬线黑体 */
+  --site-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "HarmonyOS Sans SC", "Source Han Sans SC", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei UI", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
   --site-radius: 16px;
   --site-space: 1;
-  --site-type: 1;
+  --site-type: 1; /* 设计工作台的字号旋钮，保持 1 为默认 */
   --site-motion: 1;
 
-  --serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  /* 标题统一走宋体系，补齐各平台的思源宋体族名，避免回退成黑体 */
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Songti SC", "STSong", "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", "Noto Serif SC", "SimSun", serif;
   --sans: var(--site-font);
   --ink: var(--site-fg);
   --ink-soft: #5b4f42;
@@ -52,9 +58,10 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: calc(16.5px * var(--site-type, 1));
-  line-height: 1.72;
-  letter-spacing: .01em;
+  font-size: calc(1rem * var(--site-type, 1));
+  line-height: 1.8;
+  letter-spacing: .02em;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -77,8 +84,8 @@ button { font: inherit; color: inherit; }
 h1, h2, h3, h4 {
   font-family: var(--serif);
   font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -.015em;
+  line-height: 1.24;
+  letter-spacing: .005em;
   margin: 0;
   text-wrap: balance;
 }
@@ -197,7 +204,7 @@ li { list-style: none; }
   font-weight: 600;
 }
 .brand-text small {
-  font-size: .58rem;
+  font-size: .7rem;
   letter-spacing: .2em;
   color: var(--site-muted);
   margin-top: 5px;
@@ -289,10 +296,11 @@ li { list-style: none; }
 }
 .hero-copy { padding-top: 8px; }
 .hero h1 {
-  font-size: calc(clamp(2.7rem, 5.8vw, 4.9rem) * var(--site-type, 1));
-  line-height: 1.07;
+  /* 收敛上限：让「用成一间豆浆铺。」整行放得下，句号不再孤零零掉到下一行 */
+  font-size: calc(clamp(2.45rem, 5vw, 4.1rem) * var(--site-type, 1));
+  line-height: 1.12;
   margin: 20px 0 24px;
-  letter-spacing: -.035em;
+  letter-spacing: -.015em;
 }
 .hero h1 .hl {
   position: relative;
@@ -392,7 +400,7 @@ li { list-style: none; }
   box-shadow: var(--shadow-md);
 }
 .hero-card .tiny {
-  font-size: .62rem;
+  font-size: .7rem;
   letter-spacing: .2em;
   color: var(--site-muted);
   text-transform: uppercase;
@@ -434,7 +442,7 @@ li { list-style: none; }
   right: -30px;
   top: 46%;
   writing-mode: vertical-rl;
-  font-size: .62rem;
+  font-size: .7rem;
   letter-spacing: .34em;
   color: var(--site-muted);
   opacity: .8;
@@ -545,7 +553,7 @@ li { list-style: none; }
 .cat-card .idx {
   display: block;
   margin-top: 12px;
-  font-size: .62rem;
+  font-size: .7rem;
   letter-spacing: .16em;
   color: var(--site-muted);
 }
@@ -617,7 +625,7 @@ li { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: .64rem;
+  font-size: .7rem;
   letter-spacing: .18em;
   color: var(--site-muted);
   text-transform: uppercase;
@@ -700,7 +708,7 @@ li { list-style: none; }
   position: relative;
 }
 .knob .knob-no {
-  font-size: .6rem;
+  font-size: .7rem;
   letter-spacing: .18em;
   color: #8f8776;
 }
@@ -710,7 +718,7 @@ li { list-style: none; }
   color: #f6f0e4;
 }
 .knob .knob-en {
-  font-size: .58rem;
+  font-size: .7rem;
   letter-spacing: .2em;
   color: #8f8776;
   text-transform: uppercase;
@@ -810,7 +818,7 @@ li { list-style: none; }
   color: #fff9ee;
 }
 .beyond-tile .overlay .k {
-  font-size: .6rem;
+  font-size: .7rem;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: rgba(255, 249, 238, .7);
@@ -825,7 +833,7 @@ li { list-style: none; }
   flex-direction: column;
   justify-content: space-between;
 }
-.beyond-tile.text-tile .k { font-size: .6rem; letter-spacing: .2em; opacity: .7; }
+.beyond-tile.text-tile .k { font-size: .7rem; letter-spacing: .2em; opacity: .7; }
 .beyond-tile.text-tile h3 { font-size: 1.5rem; margin: 8px 0; }
 .beyond-tile.text-tile p { font-size: .78rem; opacity: .85; line-height: 1.7; }
 .beyond-tile.text-tile .go { font-size: .74rem; border-bottom: 1px solid currentColor; align-self: flex-start; padding-bottom: 3px; }
@@ -896,7 +904,7 @@ li { list-style: none; }
 }
 .foot-col h4 {
   font-family: var(--sans);
-  font-size: .68rem;
+  font-size: .7rem;
   letter-spacing: .2em;
   text-transform: uppercase;
   color: #8f8776;
@@ -985,7 +993,7 @@ li { list-style: none; }
   color: var(--paper);
 }
 .chip .n {
-  font-size: .64rem;
+  font-size: .7rem;
   opacity: .6;
   font-variant-numeric: tabular-nums;
 }
@@ -1115,7 +1123,7 @@ li { list-style: none; }
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: .62rem;
+  font-size: .7rem;
   letter-spacing: .1em;
   color: var(--site-muted);
 }
@@ -1155,12 +1163,12 @@ li { list-style: none; }
   border-top: 1px solid var(--line);
 }
 .rcard-bottom .meta {
-  font-size: .68rem;
+  font-size: .7rem;
   color: var(--site-muted);
   letter-spacing: .04em;
 }
 .rcard-bottom .view {
-  font-size: .68rem;
+  font-size: .7rem;
   color: var(--green-deep);
   display: inline-flex;
   align-items: center;
@@ -1179,7 +1187,7 @@ li { list-style: none; }
   border-radius: 999px;
   background: #eef0e2;
   color: var(--green-deep);
-  font-size: .56rem;
+  font-size: .7rem;
   letter-spacing: .08em;
   vertical-align: 2px;
 }
@@ -1228,7 +1236,7 @@ dialog.recipe-dialog::backdrop {
   gap: 18px;
 }
 .rd-head .rd-type {
-  font-size: .64rem;
+  font-size: .7rem;
   letter-spacing: .16em;
   color: var(--c, var(--green-deep));
   display: flex;
@@ -1245,7 +1253,7 @@ dialog.recipe-dialog::backdrop {
   display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
 }
 .rd-head .rd-tags span {
-  font-size: .64rem;
+  font-size: .7rem;
   padding: 3px 9px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -1290,7 +1298,7 @@ dialog.recipe-dialog::backdrop {
   margin: 24px 0 30px;
 }
 .rd-stats div { background: var(--card); padding: 14px 16px; }
-.rd-stats b { display: block; font-size: .6rem; letter-spacing: .14em; color: var(--site-muted); font-weight: 500; margin-bottom: 4px; }
+.rd-stats b { display: block; font-size: .7rem; letter-spacing: .14em; color: var(--site-muted); font-weight: 500; margin-bottom: 4px; }
 .rd-stats span { font-size: .88rem; font-family: var(--serif); }
 .rd-cols {
   display: grid;
@@ -1337,7 +1345,7 @@ dialog.recipe-dialog::backdrop {
   border: 1px solid var(--line);
   display: grid;
   place-items: center;
-  font-size: .58rem;
+  font-size: .7rem;
   color: var(--site-muted);
   background: var(--card);
 }
@@ -1373,7 +1381,7 @@ dialog.recipe-dialog::backdrop {
   padding-top: 14px;
 }
 .prose-side .k {
-  font-size: .6rem;
+  font-size: .7rem;
   letter-spacing: .2em;
   color: var(--site-muted);
   text-transform: uppercase;
@@ -1458,7 +1466,7 @@ table.data {
 table.data th {
   text-align: left;
   font-weight: 600;
-  font-size: .66rem;
+  font-size: .7rem;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--site-muted);
@@ -1558,11 +1566,11 @@ input[type="range"]::-moz-range-thumb {
   transition: all var(--dur) var(--ease);
 }
 .ratio-presets button b { display: block; font-family: var(--serif); font-size: .98rem; font-weight: 600; }
-.ratio-presets button span { display: block; font-size: .62rem; color: var(--site-muted); margin-top: 2px; letter-spacing: .06em; }
+.ratio-presets button span { display: block; font-size: .7rem; color: var(--site-muted); margin-top: 2px; letter-spacing: .06em; }
 .ratio-presets button:hover { border-color: var(--green); }
 .ratio-presets button.is-on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 .ratio-presets button.is-on span { color: rgba(255, 253, 246, .62); }
-.calc-result .k { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: #948b7a; }
+.calc-result .k { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: #948b7a; }
 .calc-result .calc-water {
   font-family: var(--serif);
   font-size: clamp(2.8rem, 6vw, 4.2rem);
@@ -1577,7 +1585,7 @@ input[type="range"]::-moz-range-thumb {
 .calc-row { display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; font-size: .8rem; }
 .calc-row span:first-child { color: #9d9483; }
 .calc-row span:last-child { color: #f1e9da; }
-.calc-result .calc-hint { margin-top: auto; padding-top: 18px; font-size: .68rem; color: #837b6c; line-height: 1.7; }
+.calc-result .calc-hint { margin-top: auto; padding-top: 18px; font-size: .7rem; color: #837b6c; line-height: 1.7; }
 
 /* ---------- waterline diagram ---------- */
 .waterline {
@@ -1693,7 +1701,7 @@ details.acc .acc-body p + p { margin-top: 8px; }
 }
 .beyond-head .t { display: flex; align-items: baseline; gap: 14px; }
 .beyond-head h2 { font-size: calc(clamp(1.7rem, 3vw, 2.35rem) * var(--site-type, 1)); }
-.beyond-head .n { font-size: .64rem; letter-spacing: .16em; color: var(--site-muted); }
+.beyond-head .n { font-size: .7rem; letter-spacing: .16em; color: var(--site-muted); }
 .beyond-head p { font-size: .84rem; color: var(--site-muted); line-height: 1.8; }
 .beyond-head .bh-thumb {
   float: right;
@@ -1766,7 +1774,7 @@ details.acc .acc-body p + p { margin-top: 8px; }
   gap: 10px;
 }
 .ing-card h3 { font-size: 1.24rem; }
-.ing-card .alias { font-size: .64rem; color: var(--site-muted); letter-spacing: .06em; margin-top: 3px; }
+.ing-card .alias { font-size: .7rem; color: var(--site-muted); letter-spacing: .06em; margin-top: 3px; }
 .ing-card .glyph {
   position: absolute;
   right: 10px; bottom: 10px;
@@ -1794,7 +1802,7 @@ details.acc .acc-body p + p { margin-top: 8px; }
   border-top: 1px solid var(--line);
   display: grid;
   gap: 5px;
-  font-size: .68rem;
+  font-size: .7rem;
   color: var(--site-muted);
 }
 .ing-card .facts b { color: var(--ink-soft); font-weight: 500; }
@@ -1844,7 +1852,7 @@ details.acc .acc-body p + p { margin-top: 8px; }
   color: #fff9ee;
 }
 .mode-tile-label b { font-size: .92rem; font-weight: 600; letter-spacing: .03em; }
-.mode-tile-label span { font-size: .62rem; letter-spacing: .08em; color: rgba(255, 249, 238, .78); }
+.mode-tile-label span { font-size: .7rem; letter-spacing: .08em; color: rgba(255, 249, 238, .78); }
 
 /* ---------- inline figure ---------- */
 .inline-fig {
@@ -1881,7 +1889,7 @@ details.acc .acc-body p + p { margin-top: 8px; }
 @media (max-width: 1080px) {
   .cat-grid { grid-template-columns: repeat(3, 1fr); }
   .cat-grid.five { grid-template-columns: repeat(3, 1fr); }
-  .hero h1 { font-size: clamp(2.4rem, 6vw, 3.8rem); }
+  .hero h1 { font-size: clamp(2.3rem, 5.4vw, 3.7rem); }
   .beyond-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 240px 240px; }
   .beyond-tile.tall { grid-row: span 1; }
   .beyond-tile.wide { grid-column: span 2; }
@@ -1944,12 +1952,12 @@ details.acc .acc-body p + p { margin-top: 8px; }
 }
 
 @media (max-width: 560px) {
-  body { font-size: 16px; }
+  body { font-size: 1rem; }
   .brand-text small { display: none; }
   .brand-seal { width: 32px; height: 32px; font-size: 1.02rem; }
   .brand-text b { font-size: 1.1rem; }
   .btn-random { padding: 7px 11px; font-size: .72rem; }
-  .hero h1 { font-size: 2.32rem; }
+  .hero h1 { font-size: 2.2rem; }
   .hero-facts { gap: 18px; flex-wrap: wrap; }
   .hero-facts b { font-size: 1.15rem; }
   .hero-card { width: 80%; padding: 15px 17px; bottom: 18px; }
