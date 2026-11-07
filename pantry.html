@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>食材图鉴 · 浆造所</title>
+  <meta name="description" content="破壁机常用食材图鉴：黄豆、黑豆、燕麦、小米、糯米、银耳、红枣、花生、核桃等 35 种食材的作用、浸泡时间、参考用量与注意事项。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236e7f45'/%3E%3Cellipse cx='32' cy='31' rx='13' ry='16' fill='%23fffdf6'/%3E%3Cpath d='M32 19c-5 6-5 18 0 24' stroke='%236e7f45' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="page-pantry">
+  <a class="skip" href="#main">跳到正文</a>
+
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="brand" href="index.html" aria-label="浆造所首页">
+        <span class="brand-seal" aria-hidden="true">浆</span>
+        <span class="brand-text"><b>浆造所</b><small>破壁机饮品手册</small></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="recipes.html">配方库</a>
+        <a href="science.html">调配心法</a>
+        <a href="machine.html">器具手册</a>
+        <a href="beyond.html">不止豆浆</a>
+        <a href="pantry.html" class="is-active">食材图鉴</a>
+      </nav>
+      <button class="btn-random" type="button" data-random>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l3 10h3M4 17h3l2-6M14 7h6m0 0-3-3m3 3-3 3M14 17h6m0 0-3-3m3 3-3 3"/></svg>
+        随机一杯
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero wrap">
+      <div>
+        <p class="eyebrow">The Pantry</p>
+        <h1>谷物有自己的<br>脾气和分工。</h1>
+        <p class="lede">有的负责香，有的负责稠，有的只要一点点就够。把这张表看一遍，你就能在缺料的时候，自己替换出下一杯。</p>
+      </div>
+      <div class="aside-note">
+        <b>参考量怎么读</b>
+        按 800 ml 水标注，是“常见好喝区间”，不是硬性规定。第一次用某种食材，从区间下限开始；确认喜欢，再加。</div>
+    </section>
+
+    <section class="wrap" style="padding-top:24px">
+      <div class="pantry-toolbar" data-pantry-tabs aria-label="按类别筛选食材"></div>
+      <div class="pantry-grid" data-pantry-grid></div>
+
+      <div class="pantry-note">
+        <strong>三条搭配原则。</strong>第一，主豆不超过干料的 70%，否则容易腥、容易稠。第二，增稠食材一次只放一种，燕麦、糯米、银耳、山药不要叠满。第三，香味食材先焙再打，10–20 g 就足以改变整杯的气质。
+      </div>
+    </section>
+
+    <section class="prose-section wrap">
+      <div class="prose-grid">
+        <aside class="prose-side" aria-label="本页目录">
+          <p class="k">On this page</p>
+          <a href="#soak">泡发时间表</a>
+          <a href="#formula">万能骨架</a>
+          <a href="#swap">替换思路</a>
+        </aside>
+
+        <div class="prose-main">
+          <div class="article-block" id="soak">
+            <p class="eyebrow">01 — Soaking</p>
+            <h2>泡多久，才叫泡透</h2>
+            <p>标准不是钟表，而是手感：豆子胀到两倍大，用指甲能轻松掐开，中间没有硬心。夏天放冰箱泡，冬天可以室温，但都不要超过 12 小时。</p>
+            <div class="table-wrap">
+              <table class="data">
+                <thead>
+                  <tr><th>食材</th><th>时间</th><th>判断标准</th><th>备注</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>黄豆 / 黑豆</td><td>8–12 小时</td><td>体积约两倍，能掐开无硬心</td><td>泡豆水倒掉，冲洗两遍</td></tr>
+                  <tr><td>红豆 / 赤小豆</td><td>8–12 小时</td><td>表皮起皱后重新鼓胀</td><td>泡不透会有硬芯</td></tr>
+                  <tr><td>绿豆</td><td>4–6 小时</td><td>表皮裂开、能掐动</td><td>夏天放冰箱</td></tr>
+                  <tr><td>鹰嘴豆</td><td>8–12 小时</td><td>明显膨大，能压碎</td><td>泡到体积翻倍</td></tr>
+                  <tr><td>大米 / 小米</td><td>30 分钟</td><td>米粒吸水变白</td><td>不泡也能打，泡了更细</td></tr>
+                  <tr><td>糯米 / 黑米</td><td>30 分钟</td><td>米粒吸饱、略软</td><td>糯米水要足，防糊底</td></tr>
+                  <tr><td>薏米</td><td>4 小时</td><td>能掐动</td><td>干锅炒微黄更香、更温和</td></tr>
+                  <tr><td>银耳</td><td>30 分钟</td><td>完全舒展、有弹性</td><td>去硬蒂，撕小朵</td></tr>
+                  <tr><td>莲子</td><td>2 小时</td><td>能轻松掰开</td><td>去莲心，避免发苦</td></tr>
+                  <tr><td>百合干</td><td>30 分钟</td><td>叶片变软</td><td>鲜百合不用泡</td></tr>
+                  <tr><td>杏仁</td><td>8 小时</td><td>外皮起皱、可搓掉</td><td>做杏仁奶时去皮更白</td></tr>
+                  <tr><td>腰果</td><td>2 小时</td><td>略软即可</td><td>可不过滤，口感也细</td></tr>
+                  <tr><td>燕麦</td><td>不用泡</td><td>—</td><td>泡了会黏，直接打</td></tr>
+                  <tr><td>甜玉米</td><td>不用泡</td><td>—</td><td>剥粒即可；糯玉米要加水量</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-note">泡豆水含有溶出的皂苷、植酸和氧化酶，建议倒掉。冲洗到水基本清澈，再入杯。</p>
+          </div>
+
+          <div class="article-block" id="formula">
+            <p class="eyebrow">02 — Formula</p>
+            <h2>一个万能骨架，换什么都不会错</h2>
+            <p>把干料想成四个位置：主豆、增稠、增香、调味。按比例填满，就是一杯结构完整的豆浆。</p>
+            <div class="table-wrap">
+              <table class="data">
+                <thead>
+                  <tr><th>位置</th><th>占比</th><th>以 80 g 干料计</th><th>可以放什么</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>主豆</td><td>40%–70%</td><td>32–56 g</td><td>黄豆、黑豆、绿豆、红豆、鹰嘴豆</td></tr>
+                  <tr><td>增稠</td><td>15%–30%</td><td>12–24 g</td><td>大米、小米、糯米、燕麦、山药、银耳</td></tr>
+                  <tr><td>增香</td><td>10%–20%</td><td>8–16 g</td><td>花生、核桃、黑芝麻、椰浆</td></tr>
+                  <tr><td>调味</td><td>5%–10%</td><td>3–8 g / 3–5 颗</td><td>红枣、枸杞、桂圆、椰枣、桂花</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-note">例：黄豆 40 g（主豆）+ 小米 20 g（增稠）+ 花生 15 g（增香）+ 红枣 3 颗（调味），水 800–900 ml。这就是一个不会出错的日常配方。</p>
+          </div>
+
+          <div class="article-block" id="swap">
+            <p class="eyebrow">03 — Substitutions</p>
+            <h2>缺料的时候，这样替换</h2>
+            <div class="rule-grid">
+              <div class="rule"><span class="rn">A</span><div><b>没有黑豆</b><p>用黄豆 + 10 g 黑芝麻，颜色会浅一些，香气补回来。</p></div></div>
+              <div class="rule"><span class="rn">B</span><div><b>没有糯米</b><p>用等量大米，或少 5 g 燕麦；稠度会略低，水量减 50 ml。</p></div></div>
+              <div class="rule"><span class="rn">C</span><div><b>没有银耳</b><p>用 10 g 燕麦或 15 g 山药替代胶质，口感不同但同样顺。</p></div></div>
+              <div class="rule"><span class="rn">D</span><div><b>没有鹰嘴豆</b><p>等量黄豆，或一半黄豆一半花生，栗子香会弱一点。</p></div></div>
+              <div class="rule"><span class="rn">E</span><div><b>没有牛奶</b><p>用等量燕麦奶、杏仁奶，或 10 g 奶粉 + 90 ml 水。</p></div></div>
+              <div class="rule"><span class="rn">F</span><div><b>不想放糖</b><p>加 1–2 颗椰枣，或把红枣从 3 颗加到 5 颗；也可以减少 50 ml 水，让甜感集中。</p></div></div>
+            </div>
+            <div class="callout">
+              <b>关于“药食同源”</b>
+              <p>红枣、枸杞、薏米、莲子、百合属于常见食材，但并非人人适合、也并非越多越好。孕期、哺乳期、慢性病人群和正在服药者，请先咨询医生或注册营养师，不要把网上的配方当作治疗方案。</p>
+            </div>
+          </div>
+
+          <div class="callout green" style="margin-top:36px">
+            <b>下一步</b>
+            <p>看完食材，去 <a href="science.html" style="border-bottom:1px solid currentColor">调配心法</a> 用计算器算一次水量，或者直接进 <a href="recipes.html" style="border-bottom:1px solid currentColor">配方库</a> 挑一杯。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-seal" aria-hidden="true">浆</span>
+            <span class="brand-text"><b>浆造所</b><small>破壁机饮品手册</small></span>
+          </a>
+          <p>把谷物交给时间，把细腻交给刀锋。一本关于家庭豆浆与破壁料理的长期笔记。</p>
+        </div>
+        <div class="foot-col">
+          <h4>翻一翻</h4>
+          <ul>
+            <li><a href="recipes.html">配方库</a></li>
+            <li><a href="recipes.html?home=1">家藏 15 款</a></li>
+            <li><a href="beyond.html">不止豆浆</a></li>
+            <li><a href="pantry.html">食材图鉴</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>读一读</h4>
+          <ul>
+            <li><a href="science.html">调配心法</a></li>
+            <li><a href="science.html#ratio">比例与计算</a></li>
+            <li><a href="machine.html">器具手册</a></li>
+            <li><a href="machine.html#safety">安全红线</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>资料与说明</h4>
+          <ul>
+            <li><span>15 款家藏配方来自你提供的截图（小红书 @49724713130）</span></li>
+            <li><span>比例与安全参考：什么值得买、百度百科、薄荷健康等公开资料</span></li>
+            <li><a href="machine.html#safety">生豆浆必须彻底煮沸</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 浆造所 · 家庭厨房笔记</span>
+        <span class="disc">本站为家庭饮食记录，不构成医疗或营养建议。豆类务必煮熟；孕期、婴幼儿、慢性病人群及正在服药者，请先咨询专业人士。</span>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="recipeDialog" class="recipe-dialog" aria-label="配方详情"></dialog>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

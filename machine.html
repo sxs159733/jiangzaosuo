@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>器具手册 · 浆造所</title>
+  <meta name="description" content="破壁机使用指南：豆浆、米糊、玉米汁、浓汤、果蔬、冰沙、酱料、研磨等十二种模式的用法，水位与容量、八步操作、安全红线、清洗保养与故障排查。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236e7f45'/%3E%3Cellipse cx='32' cy='31' rx='13' ry='16' fill='%23fffdf6'/%3E%3Cpath d='M32 19c-5 6-5 18 0 24' stroke='%236e7f45' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="page-machine">
+  <a class="skip" href="#main">跳到正文</a>
+
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="brand" href="index.html" aria-label="浆造所首页">
+        <span class="brand-seal" aria-hidden="true">浆</span>
+        <span class="brand-text"><b>浆造所</b><small>破壁机饮品手册</small></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="recipes.html">配方库</a>
+        <a href="science.html">调配心法</a>
+        <a href="machine.html" class="is-active">器具手册</a>
+        <a href="beyond.html">不止豆浆</a>
+        <a href="pantry.html">食材图鉴</a>
+      </nav>
+      <button class="btn-random" type="button" data-random>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l3 10h3M4 17h3l2-6M14 7h6m0 0-3-3m3 3-3 3M14 17h6m0 0-3-3m3 3-3 3"/></svg>
+        随机一杯
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero wrap">
+      <div>
+        <p class="eyebrow">Know Your Machine</p>
+        <h1>先认识你的机器，<br>再谈配方。</h1>
+        <p class="lede">同一份食材，选错模式会差很多：该加热的没加热，该短打的打了三分钟。这页把面板上的十二个键、杯体上的三条线，以及那些不能碰的红线，一次讲清楚。</p>
+      </div>
+      <div class="aside-note">
+        <b>不同机型有差异</b>
+        以下按常见家用加热型破壁机整理。你的机器如果没有“玉米汁”或“冰沙”键，用最接近的模式替代；具体上限以杯体刻度和说明书为准。
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="beyond-hero-img">
+        <img src="assets/img/blender-counter.webp" alt="清晨厨房台面上的破壁机与备好的食材" width="1400" height="870">
+      </div>
+    </div>
+
+    <section class="prose-section wrap">
+      <div class="prose-grid">
+        <aside class="prose-side" aria-label="本页目录">
+          <p class="k">On this page</p>
+          <a href="#modes">十二种模式</a>
+          <a href="#capacity">水位与容量</a>
+          <a href="#steps">八个动作</a>
+          <a href="#safety">安全红线</a>
+          <a href="#clean">清洗与保养</a>
+          <a href="#timer">预约与保温</a>
+          <a href="#trouble">故障排查</a>
+        </aside>
+
+        <div class="prose-main">
+          <div class="article-block" id="modes">
+            <p class="eyebrow">01 — Modes</p>
+            <h2>面板上的十二个键，分别做什么</h2>
+            <p>预设程序不是“同一个刀片转不同时长”，而是不同的加热曲线、转速和间歇节奏。选对模式，比手动高速打十分钟更细、更安全。</p>
+            <div class="mode-gallery" data-mode-gallery aria-label="常见模式的成品示例"></div>
+            <div class="table-wrap">
+              <table class="data">
+                <thead>
+                  <tr><th>模式</th><th>常见时长</th><th>适合做什么</th><th>要点</th></tr>
+                </thead>
+                <tbody data-modes></tbody>
+              </table>
+            </div>
+            <p class="table-note">时间是常见范围，实际受水量、水温、电压和食材量影响。第一次用某个模式，建议按说明书的最小量试一次。</p>
+            <div class="callout green">
+              <b>没有对应模式怎么办</b>
+              <p>玉米汁 → 米糊或豆浆；浓汤 → 米糊（结束后再调味）；冰沙 → 点动/脉冲分次打；酱料 → 研磨或点动，勤刮壁；植物奶 → 果蔬模式打 1–2 分钟。</p>
+            </div>
+          </div>
+
+          <div class="article-block" id="capacity">
+            <p class="eyebrow">02 — Capacity</p>
+            <h2>三条线：冷饮上限、热饮上限、最低水位</h2>
+            <p>热饮沸腾后会膨胀、起泡，所以热饮上限通常低于冷饮上限。超过它，轻则溢锅，重则糊住加热盘、触发保护。低于最低水位，则可能空转、加热不均。</p>
+
+            <div class="waterline">
+              <svg class="pitcher" viewBox="0 0 200 300" role="img" aria-label="破壁机杯体水位示意图：冷饮上限最高，热饮上限次之，最低水位在杯底上方">
+                <defs>
+                  <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#e8dcc0"/>
+                    <stop offset="1" stop-color="#d8c8a4"/>
+                  </linearGradient>
+                </defs>
+                <path d="M46 18h78a12 12 0 0 1 12 12v232a22 22 0 0 1-22 22H56a22 22 0 0 1-22-22V30a12 12 0 0 1 12-12z" fill="#fbf7ee" stroke="#c9bda6" stroke-width="2"/>
+                <path d="M46 18h78a12 12 0 0 1 12 12v6H34v-6a12 12 0 0 1 12-12z" fill="#e6dcc9" stroke="#c9bda6" stroke-width="2"/>
+                <path d="M36 118h98v146a22 22 0 0 1-22 22H58a22 22 0 0 1-22-22z" fill="url(#liquid)" opacity=".9"/>
+                <path d="M36 80h98" stroke="#bc5f52" stroke-width="1.6" stroke-dasharray="5 4"/>
+                <path d="M36 118h98" stroke="#bd7446" stroke-width="1.6" stroke-dasharray="5 4"/>
+                <path d="M36 250h98" stroke="#6e7f45" stroke-width="1.6" stroke-dasharray="5 4"/>
+                <text x="141" y="84" font-size="9" fill="#8a7a66" font-family="sans-serif">冷饮上限</text>
+                <text x="141" y="122" font-size="9" fill="#8a7a66" font-family="sans-serif">热饮上限</text>
+                <text x="141" y="254" font-size="9" fill="#8a7a66" font-family="sans-serif">最低水位</text>
+                <path d="M136 80h4M136 118h4M136 250h4" stroke="#8a7a66" stroke-width="1"/>
+                <path d="M96 18v-8h18v8" fill="none" stroke="#c9bda6" stroke-width="2"/>
+                <ellipse cx="85" cy="42" rx="30" ry="9" fill="#2a241c" opacity=".06"/>
+              </svg>
+              <ul class="waterline-legend">
+                <li><span class="mk" style="background:#bc5f52"></span><span><b>冷饮上限</b>果蔬汁、冰沙、植物奶的最高水位。别因为“不加热”就加满。</span></li>
+                <li><span class="mk" style="background:#bd7446"></span><span><b>热饮上限</b>豆浆、米糊、玉米汁、浓汤的硬线。沸腾起泡会占空间，超过就容易溢。</span></li>
+                <li><span class="mk" style="background:#6e7f45"></span><span><b>最低水位</b>低于它，刀片可能空转、加热盘干烧。少量制作请选小杯或减少配方。</span></li>
+                <li><span class="mk" style="background:#2a241c"></span><span><b>食材体积</b>干料不要超过杯体 1/3；泡发后的豆类、银耳会继续膨胀。</span></li>
+              </ul>
+            </div>
+            <p class="table-note">示意图仅表达相对关系，不代表具体毫升数。以你机器杯体上的刻度为准；没有刻度时，第一次只做半杯。</p>
+          </div>
+
+          <div class="article-block" id="steps">
+            <p class="eyebrow">03 — Routine</p>
+            <h2>一桶豆浆的八个动作</h2>
+            <div class="rule-grid">
+              <div class="rule"><span class="rn">01</span><div><b>检查</b><p>密封圈在位、无裂纹；杯体与底座耦合处干燥；杯盖卡扣完好。</p></div></div>
+              <div class="rule"><span class="rn">02</span><div><b>先加水</b><p>加到目标水位的 60%–80%，再放食材，不容易粘底。</p></div></div>
+              <div class="rule"><span class="rn">03</span><div><b>放食材</b><p>豆类在下、轻的谷物在上；红枣去核；大块切小。</p></div></div>
+              <div class="rule"><span class="rn">04</span><div><b>补到水位</b><p>总液体不超过热饮上限；食材不超过杯体 1/3。</p></div></div>
+              <div class="rule"><span class="rn">05</span><div><b>盖紧</b><p>听到“咔哒”一声，或确认卡扣到位。没盖严，机器不应启动。</p></div></div>
+              <div class="rule"><span class="rn">06</span><div><b>选模式</b><p>按食材选，不按心情选。硬豆用豆浆，水果用果蔬，冰用冰沙。</p></div></div>
+              <div class="rule"><span class="rn">07</span><div><b>等一等</b><p>结束后等 2–5 分钟，让蒸汽散掉、压力平衡，再开盖。</p></div></div>
+              <div class="rule"><span class="rn">08</span><div><b>立刻洗</b><p>趁热加温水，点动或清洗模式 30–60 秒，倒掉后再细洗。</p></div></div>
+            </div>
+            <div class="callout">
+              <b>运行中不要做的事</b>
+              <p>不要开盖、不要把手或勺子伸进杯里、不要移动机器、不要频繁按键。机器抖动异常或发出异响时，先断电，再检查食材是否放偏、是否超量。</p>
+            </div>
+          </div>
+
+          <div class="article-block" id="safety">
+            <p class="eyebrow">04 — Safety</p>
+            <h2>八条安全红线</h2>
+            <p>这些不是“注意事项”里的客套话，是真正会伤机器或伤人的操作。</p>
+            <div class="rule-grid">
+              <div class="rule"><span class="rn">01</span><div><b>不超水位</b><p>热饮超过热饮上限，沸腾后会从杯口喷出，蒸汽比开水更烫。</p></div></div>
+              <div class="rule"><span class="rn">02</span><div><b>不空转</b><p>没有液体和食材时不要让刀片高速旋转，会损伤密封和轴承。</p></div></div>
+              <div class="rule"><span class="rn">03</span><div><b>不中途开盖</b><p>尤其热饮。等程序结束、蒸汽散开再开，避免烫伤和溢出。</p></div></div>
+              <div class="rule"><span class="rn">04</span><div><b>不伸入工具</b><p>运行中绝对不要用勺子、筷子伸进杯里“帮忙”。</p></div></div>
+              <div class="rule"><span class="rn">05</span><div><b>不骤冷骤热</b><p>不要把刚沸腾的液体倒进冷玻璃杯；也不要把冷冻硬块直接丢进热杯。</p></div></div>
+              <div class="rule"><span class="rn">06</span><div><b>不水洗底座</b><p>主机底座只可微湿布擦拭；杯底耦合处要擦干再放回。</p></div></div>
+              <div class="rule"><span class="rn">07</span><div><b>不硬打硬物</b><p>骨头、整块冰糖、未泡的极硬干货、大块冻肉，先处理再打。</p></div></div>
+              <div class="rule"><span class="rn">08</span><div><b>不连续久打</b><p>每次间隔 5–10 分钟；手动点动每次不超过 10 秒，防电机过热。</p></div></div>
+            </div>
+            <div class="callout">
+              <b>如果机器冒烟、异味或异常震动</b>
+              <p>立即断电，不要继续按键，也不要马上开盖。等完全冷却后再检查；无法判断原因时联系售后，不要自行拆机。</p>
+            </div>
+          </div>
+
+          <div class="article-block" id="clean">
+            <p class="eyebrow">05 — Care</p>
+            <h2>清洗：趁热，比用力更重要</h2>
+            <p>破壁机用得越来越少，多半不是坏了，而是洗起来太麻烦。真正省力的做法只有一个：程序结束后立刻洗。</p>
+            <div class="rule-grid">
+              <div class="rule"><span class="rn">A</span><div><b>趁热冲洗</b><p>倒出饮品后加温水至 500 ml，点动或清洗模式 30–60 秒，倒掉。大部分残渣已经松动。</p></div></div>
+              <div class="rule"><span class="rn">B</span><div><b>细刷刀座</b><p>用软毛刷或旧牙刷轻刷刀片根部和密封圈缝隙，不要用手抠。</p></div></div>
+              <div class="rule"><span class="rn">C</span><div><b>深度除垢</b><p>每月一次：500–600 ml 温水 + 1 勺小苏打 + 1 勺柠檬酸，运行米糊/清洗 5 分钟，静置 10 分钟后冲净。</p></div></div>
+              <div class="rule"><span class="rn">D</span><div><b>彻底晾干</b><p>杯体倒置在通风处，密封圈取下单独晾干。完全干燥后再组装，避免异味和霉点。</p></div></div>
+            </div>
+            <p><strong>糊底了怎么办？</strong>不要用钢丝球。趁热倒入温水没过糊底，加一勺小苏打浸泡 30 分钟，再用软刷或木铲轻推。顽固的焦层可以加少量白醋，低温加热 5 分钟后再泡。</p>
+            <p><strong>有异味怎么办？</strong>柠檬皮或少量白醋加温水，点动 30 秒后静置 10 分钟；密封圈单独用温水和小苏打搓洗。打完大蒜、洋葱、鱼类后，尽快清洗，别等下一次。</p>
+          </div>
+
+          <div class="article-block" id="timer">
+            <p class="eyebrow">06 — Timer</p>
+            <h2>预约与保温：方便，但别过头</h2>
+            <p>预约的本质是“让食材在水里等一段时间再加热”。冬天问题不大，夏天就要谨慎。</p>
+            <ul class="bullets">
+              <li><strong>6–12 小时为宜。</strong>时间太长，豆子泡过头，风味变差，夏天还容易变质。</li>
+              <li><strong>夏季不要把豆子泡在水里预约一整夜。</strong>更稳的做法是豆子泡好沥干、放冰箱，早上直接入杯。</li>
+              <li><strong>预约前确认水位和模式。</strong>尤其是热饮上限，别因为“还没开始”就加满。</li>
+              <li><strong>保温不是保鲜。</strong>程序结束后尽量倒出；长时间 60°C 保温会让豆浆变味、变稠。</li>
+              <li><strong>牛奶、椰浆、糖不要预约。</strong>它们更容易变质或糊底，程序结束后再加。</li>
+            </ul>
+          </div>
+
+          <div class="article-block" id="trouble">
+            <p class="eyebrow">07 — Troubleshooting</p>
+            <h2>几个常见故障，先别急着报修</h2>
+
+            <details class="acc" open>
+              <summary>按了启动，机器没反应</summary>
+              <div class="acc-body"><p>先检查：杯体是否放正、杯盖是否卡到位、电源是否接通、是否处于保护状态。很多机型有“盖子未到位不启动”的联锁。刚做完热饮时，也可能因为温度过高进入保护，等 10–20 分钟再试。</p></div>
+            </details>
+            <details class="acc">
+              <summary>又糊底了</summary>
+              <div class="acc-body"><p>水太少、淀粉太多、糖或牛奶提前加、食材沉底粘住加热盘，是最常见的四个原因。下次先加水再放料，水量不低于配方下限，糖和奶最后加。厚底、高淀粉配方中途可以暂停刮一次底。</p></div>
+            </details>
+            <details class="acc">
+              <summary>沸腾后从杯口溢出来</summary>
+              <div class="acc-body"><p>超过热饮上限，或豆类/燕麦太多导致泡沫堆积。立即断电，等冷却后再清理。下次减少 100–200 ml 水或减少 10–20 g 干料；也可以在程序前加一小滴食用油帮助消泡（不要多）。</p></div>
+            </details>
+            <details class="acc">
+              <summary>打完有很多粗颗粒</summary>
+              <div class="acc-body"><p>豆子没泡透、干料太多、水太少，或者机器转速不足。先补 50–100 ml 温水，再用点动打 20–30 秒。仍然粗，就过滤；豆渣可以摊饼。硬豆和高纤维食材不要期待完全无渣。</p></div>
+            </details>
+            <details class="acc">
+              <summary>机器晃动、噪音特别大</summary>
+              <div class="acc-body"><p>检查台面是否平稳、四脚是否落稳、食材是否放偏、杯体是否卡紧。少量高黏度食材也容易让机器共振。不要用手压机器；断电后重新分布食材，或增加液体。</p></div>
+            </details>
+            <details class="acc">
+              <summary>显示错误代码 / 过热保护</summary>
+              <div class="acc-body"><p>不同品牌代码含义不同，先查说明书。通用处理：断电、冷却 20–30 分钟、检查水位与食材量、清理杯底和耦合处的水渍，再重启。反复出现同一代码，联系售后，不要自行拆机。</p></div>
+            </details>
+            <details class="acc">
+              <summary>杯体有异味，洗了还在</summary>
+              <div class="acc-body"><p>多半在密封圈和刀座缝隙。取下密封圈，用温水加小苏打搓洗，晾干；杯体用柠檬酸或白醋温水浸泡 10 分钟。不要用漂白水，也不要把底座泡水。</p></div>
+            </details>
+          </div>
+
+          <div class="callout green" style="margin-top:36px">
+            <b>下一步</b>
+            <p>器具弄明白了，去 <a href="recipes.html" style="border-bottom:1px solid currentColor">配方库</a> 挑一杯，或者读 <a href="science.html" style="border-bottom:1px solid currentColor">调配心法</a>，把比例调成自己的口味。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-seal" aria-hidden="true">浆</span>
+            <span class="brand-text"><b>浆造所</b><small>破壁机饮品手册</small></span>
+          </a>
+          <p>把谷物交给时间，把细腻交给刀锋。一本关于家庭豆浆与破壁料理的长期笔记。</p>
+        </div>
+        <div class="foot-col">
+          <h4>翻一翻</h4>
+          <ul>
+            <li><a href="recipes.html">配方库</a></li>
+            <li><a href="recipes.html?home=1">家藏 15 款</a></li>
+            <li><a href="beyond.html">不止豆浆</a></li>
+            <li><a href="pantry.html">食材图鉴</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>读一读</h4>
+          <ul>
+            <li><a href="science.html">调配心法</a></li>
+            <li><a href="science.html#ratio">比例与计算</a></li>
+            <li><a href="machine.html">器具手册</a></li>
+            <li><a href="machine.html#safety">安全红线</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>资料与说明</h4>
+          <ul>
+            <li><span>15 款家藏配方来自你提供的截图（小红书 @49724713130）</span></li>
+            <li><span>比例与安全参考：什么值得买、百度百科、薄荷健康等公开资料</span></li>
+            <li><a href="machine.html#safety">生豆浆必须彻底煮沸</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 浆造所 · 家庭厨房笔记</span>
+        <span class="disc">本站为家庭饮食记录，不构成医疗或营养建议。豆类务必煮熟；孕期、婴幼儿、慢性病人群及正在服药者，请先咨询专业人士。</span>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="recipeDialog" class="recipe-dialog" aria-label="配方详情"></dialog>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

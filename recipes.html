@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>配方库 · 浆造所</title>
+  <meta name="description" content="60 款破壁机配方，可按豆浆、玉米汁、果蔬汁、米糊、浓汤、冰沙、酱料、辅食与研磨筛选，支持搜索。含家藏 15 款配方。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236e7f45'/%3E%3Cellipse cx='32' cy='31' rx='13' ry='16' fill='%23fffdf6'/%3E%3Cpath d='M32 19c-5 6-5 18 0 24' stroke='%236e7f45' stroke-width='2' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="page-recipes">
+  <a class="skip" href="#main">跳到正文</a>
+
+  <header class="site-head">
+    <div class="wrap head-inner">
+      <a class="brand" href="index.html" aria-label="浆造所首页">
+        <span class="brand-seal" aria-hidden="true">浆</span>
+        <span class="brand-text"><b>浆造所</b><small>破壁机饮品手册</small></span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="recipes.html" class="is-active">配方库</a>
+        <a href="science.html">调配心法</a>
+        <a href="machine.html">器具手册</a>
+        <a href="beyond.html">不止豆浆</a>
+        <a href="pantry.html">食材图鉴</a>
+      </nav>
+      <button class="btn-random" type="button" data-random>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h3l3 10h3M4 17h3l2-6M14 7h6m0 0-3-3m3 3-3 3M14 17h6m0 0-3-3m3 3-3 3"/></svg>
+        随机一杯
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero wrap">
+      <div>
+        <p class="eyebrow">The Recipe Library</p>
+        <h1>六十款，<br>按心情挑一杯。</h1>
+        <p class="lede">有 15 款来自你收藏的截图，原方水 600–800 ml，偏浓稠；其余按日常比例补齐。点开任意一张卡片，能看完整的食材、步骤和一条“一杯的经验”。</p>
+      </div>
+      <div class="aside-note">
+        <b>怎么用这个库</b>
+        先按类型筛，再按口味挑。豆浆类可以继续细分到六个流派；“家藏”标记的是你带过来的配方，一个字都没改。
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="beyond-hero-img">
+        <img src="assets/img/recipes-lineup.webp" alt="六杯不同颜色的破壁机饮品：豆浆、黑芝麻、玉米汁、西瓜汁、果蔬昔与紫薯饮" width="1400" height="745">
+      </div>
+    </div>
+
+    <section class="recipe-section wrap">
+      <div class="toolbar" data-type-tabs aria-label="按类型筛选"></div>
+      <div class="sub-toolbar" data-sub-toolbar hidden aria-label="按豆浆流派筛选"></div>
+
+      <div class="search-row">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+          <input type="search" data-search placeholder="搜配方或食材，比如「黑芝麻」" aria-label="搜索配方或食材">
+        </label>
+      </div>
+
+      <div class="result-line">
+        <span data-result-count>共 <b>60</b> 款配方</span>
+        <button class="sort-btn" type="button" data-sort>推荐顺序</button>
+      </div>
+
+      <div class="recipe-grid" data-recipe-grid></div>
+      <div class="load-more" data-more>
+        <button class="btn ghost" type="button">再看 15 款 <span class="arrow">↓</span></button>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="wrap quote-inner">
+        <span class="mark" aria-hidden="true">“</span>
+        <div>
+          <blockquote>配方是起点，不是答案。水多 50 毫升、糖少 5 克，都是你自己的版本。</blockquote>
+          <cite>—— 浆造所 · 使用说明</cite>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-seal" aria-hidden="true">浆</span>
+            <span class="brand-text"><b>浆造所</b><small>破壁机饮品手册</small></span>
+          </a>
+          <p>把谷物交给时间，把细腻交给刀锋。一本关于家庭豆浆与破壁料理的长期笔记。</p>
+        </div>
+        <div class="foot-col">
+          <h4>翻一翻</h4>
+          <ul>
+            <li><a href="recipes.html">配方库</a></li>
+            <li><a href="recipes.html?home=1">家藏 15 款</a></li>
+            <li><a href="beyond.html">不止豆浆</a></li>
+            <li><a href="pantry.html">食材图鉴</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>读一读</h4>
+          <ul>
+            <li><a href="science.html">调配心法</a></li>
+            <li><a href="science.html#ratio">比例与计算</a></li>
+            <li><a href="machine.html">器具手册</a></li>
+            <li><a href="machine.html#safety">安全红线</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>资料与说明</h4>
+          <ul>
+            <li><span>15 款家藏配方来自你提供的截图（小红书 @49724713130）</span></li>
+            <li><span>比例与安全参考：什么值得买、百度百科、薄荷健康等公开资料</span></li>
+            <li><a href="machine.html#safety">生豆浆必须彻底煮沸</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 浆造所 · 家庭厨房笔记</span>
+        <span class="disc">本站为家庭饮食记录，不构成医疗或营养建议。豆类务必煮熟；孕期、婴幼儿、慢性病人群及正在服药者，请先咨询专业人士。</span>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="recipeDialog" class="recipe-dialog" aria-label="配方详情"></dialog>
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
