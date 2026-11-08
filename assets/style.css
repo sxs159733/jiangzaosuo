@@ -939,6 +939,12 @@ li { list-style: none; }
   flex-wrap: wrap;
 }
 .foot-bottom .disc { max-width: 680px; line-height: 1.7; }
+.foot-update {
+  margin: 14px 0 0;
+  font-size: .7rem;
+  color: var(--foot-note-ink);
+}
+.foot-update a { color: inherit; text-underline-offset: 3px; }
 
 /* ---------- page hero (inner pages) ---------- */
 .page-hero {
