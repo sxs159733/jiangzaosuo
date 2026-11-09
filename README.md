@@ -24,8 +24,15 @@
 assets/style.css       全站样式与设计变量
 assets/data.js         全部结构化内容（配方、食材、模式）
 assets/app.js          筛选、搜索、详情与公共交互
+assets/community.js    评分与评论（1–5 星、平均分、评论发布/列表、按评分/评论数排序）
 assets/img/            实拍与配图
 ```
+
+## 评分与评论
+
+每款配方支持 1–5 星打分（同一浏览器可修改自己的评分）、平均分与评论数展示、文字评论发布与列表；配方库可按「评分 高 → 低」「评论 多 → 少」排序。数据云端共享，所有访客可见。
+
+后端为 Cloudflare Worker + KV（源码不在本仓库，由站点维护者单独保管），前端在 `assets/community.js` 顶部的 `PROD_API` 配置 API 地址；未配置时评分评论区自动隐藏，不影响其余功能。本地联调可用配套的 dev-server（localhost 自动走同源 `/api` 代理）。
 
 ## 本地预览
 

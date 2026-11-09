@@ -66,6 +66,7 @@
           </div>
           <h3>${esc(r.n)}</h3>
           <p class="ings">${esc(names)}</p>
+          <div class="rcard-rate" data-rate="${r.id}"></div>
           <div class="rcard-bottom">
             <span class="meta">${esc(r.w)} · ${esc(r.m)}模式</span>
             <span class="view">看做法 →</span>
@@ -160,6 +161,7 @@
           </div>
         </div>
         ${r.tip ? `<div class="rd-tip"><h3>一杯的经验</h3><p>${esc(r.tip)}</p></div>` : ''}
+        <section class="rd-community" data-community="${r.id}" aria-label="评分与评论"></section>
         <div class="rd-foot">
           <button class="btn" type="button" data-random>换一杯试试 <span class="arrow">→</span></button>
           <button class="btn ghost" type="button" data-similar="${r.t}">看同类配方</button>
@@ -167,6 +169,9 @@
       </div>`;
 
     $('[data-close-recipe]', dlg).addEventListener('click', closeRecipe);
+    if (window.JZSCommunity) {
+      window.JZSCommunity.renderDialog(r.id, $('[data-community]', dlg));
+    }
     $$('[data-random]', dlg).forEach((b) => b.addEventListener('click', (e) => {
       e.preventDefault();
       openRecipe(RECIPES[Math.floor(Math.random() * RECIPES.length)].id);
@@ -245,6 +250,7 @@
               <div class="topline"><span>${esc(catLabel(r))}</span><span>${pad(idx + 1)} / 03</span></div>
               <h3>${esc(r.n)}</h3>
               <p class="ings">${esc(r.i.map((x) => x[0]).join(' · '))}</p>
+              <div class="rcard-rate" data-rate="${r.id}"></div>
               <div class="meta"><span><b>水</b>${esc(r.w)}</span><span><b>模式</b>${esc(r.m)}</span></div>
               <span class="big-char">${esc(r.n.slice(0, 1))}</span>
             </div>
@@ -257,6 +263,7 @@
           if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
         });
       });
+      if (window.JZSCommunity) window.JZSCommunity.decorateCards(featured);
     }
   }
 
@@ -279,6 +286,7 @@
     if (params.get('sub') && SUBS[params.get('sub')]) state.sub = params.get('sub');
     if (params.get('q')) state.q = params.get('q');
     if (params.get('home') === '1') state.home = true;
+    if (['grams', 'time', 'rating', 'comments'].includes(params.get('sort'))) state.sort = params.get('sort');
 
     // tabs
     tabs.innerHTML = [`<button class="chip" data-type="all">全部 <span class="n">${RECIPES.length}</span></button>`]
@@ -310,7 +318,8 @@
     });
 
     sortBtn.addEventListener('click', () => {
-      state.sort = state.sort === 'default' ? 'grams' : state.sort === 'grams' ? 'time' : 'default';
+      const order = ['default', 'grams', 'time', 'rating', 'comments'];
+      state.sort = order[(order.indexOf(state.sort) + 1) % order.length];
       state.shown = 15;
       sync();
       render();
@@ -343,7 +352,7 @@
           });
         });
       }
-      sortBtn.textContent = state.sort === 'default' ? '推荐顺序' : state.sort === 'grams' ? '干料 轻 → 重' : '用时 短 → 长';
+      sortBtn.textContent = { default: '推荐顺序', grams: '干料 轻 → 重', time: '用时 短 → 长', rating: '评分 高 → 低', comments: '评论 多 → 少' }[state.sort] || '推荐顺序';
     }
 
     function filtered() {
@@ -360,6 +369,14 @@
       }
       if (state.sort === 'grams') list.sort((a, b) => gramsOf(a) - gramsOf(b));
       if (state.sort === 'time') list.sort((a, b) => minutesOf(a) - minutesOf(b));
+      if (state.sort === 'rating' || state.sort === 'comments') {
+        const st = (r) => (window.JZSCommunity ? window.JZSCommunity.getStats(r.id) : { avg: 0, count: 0, comments: 0 });
+        list.sort((a, b) => {
+          const sa = st(a); const sb = st(b);
+          if (state.sort === 'rating') return (sb.avg - sa.avg) || (sb.count - sa.count);
+          return (sb.comments - sa.comments) || (sb.avg - sa.avg);
+        });
+      }
       return list;
     }
 
@@ -372,6 +389,7 @@
       } else {
         grid.innerHTML = slice.map((r, i) => cardHTML(r, i)).join('');
         bindCards(grid);
+        if (window.JZSCommunity) window.JZSCommunity.decorateCards(grid);
       }
       moreWrap.hidden = list.length <= state.shown;
 
@@ -380,11 +398,18 @@
       if (state.type === 'soy' && state.sub !== 'all') url.searchParams.set('sub', state.sub); else url.searchParams.delete('sub');
       if (state.home) url.searchParams.set('home', '1'); else url.searchParams.delete('home');
       if (state.q) url.searchParams.set('q', state.q); else url.searchParams.delete('q');
+      if (state.sort !== 'default') url.searchParams.set('sort', state.sort); else url.searchParams.delete('sort');
       history.replaceState(null, '', url);
     }
 
     sync();
     render();
+
+    // 云端评分数据就绪后：刷新卡片展示；若正按评分/评论排序则重排
+    window.addEventListener('jzs-stats', () => {
+      if (window.JZSCommunity) window.JZSCommunity.decorateCards(grid);
+      if (state.sort === 'rating' || state.sort === 'comments') render();
+    });
 
     const deepId = params.get('id');
     if (deepId) setTimeout(() => openRecipe(deepId), 80);
@@ -397,6 +422,7 @@
       const list = RECIPES.filter((r) => r.t === t);
       el.innerHTML = list.map((r, i) => cardHTML(r, i)).join('');
       bindCards(el);
+      if (window.JZSCommunity) window.JZSCommunity.decorateCards(el);
     });
   }
 
@@ -541,6 +567,11 @@
     // close recipe with ESC is native; also clear hash on hashchange removal
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && dialog && dialog.open) closeRecipe();
+    });
+
+    // 评分数据就绪后刷新当前页所有卡片（首页 / 不止豆浆等非配方库页面）
+    window.addEventListener('jzs-stats', () => {
+      if (window.JZSCommunity) window.JZSCommunity.decorateCards(document);
     });
   });
 })();
