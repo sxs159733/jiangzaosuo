@@ -32,7 +32,7 @@ assets/img/            实拍与配图
 
 每款配方支持 1–5 星打分（同一浏览器可修改自己的评分）、平均分与评论数展示、文字评论发布与列表；配方库可按「评分 高 → 低」「评论 多 → 少」排序。数据云端共享，所有访客可见。
 
-后端为 Cloudflare Worker + KV（源码不在本仓库，由站点维护者单独保管），前端在 `assets/community.js` 顶部的 `PROD_API` 配置 API 地址；未配置时评分评论区自动隐藏，不影响其余功能。本地联调可用配套的 dev-server（localhost 自动走同源 `/api` 代理）。
+后端为 Appwrite Cloud 免费套餐（国内可达的云数据库 + 匿名认证）。访客首次评分/评论时自动创建匿名会话，一人一票、可改自己的票；前端只含公开的 Project ID，不含任何密钥。建库用一次性脚本 `jzs-backend/appwrite-setup.mjs`（仓库外）初始化 `jzs` 库的 `ratings` / `comments` 集合；前端在 `assets/community.js` 顶部的 `PROJECT_ID` 配置项目 ID。未配置时评分评论区自动隐藏，不影响其余功能。
 
 ## 本地预览
 
